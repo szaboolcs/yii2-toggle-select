@@ -8,8 +8,9 @@ class ToggleSelectAsset extends AssetBundle
 	public function init()
 	{
 		$this->sourcePath = __DIR__ . '/assets';
-
-		$this->setupAssets('js', ['js/toggle-select.js']);
+		$this->js         = [
+			'js/toggle-select.js'
+		];
 
 		parent::init();
 	}
