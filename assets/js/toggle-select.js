@@ -37,16 +37,16 @@
 			});
 
 			buttons.each(function(index, row) {
-				button = (settings.buttonTemplate == defaultOptions.buttonTemplate ? row : $(row).find('button[data-select-id="' + selectId + '"][data-ts-class="ts-button"]'));
+				button = (settings.buttonTemplate == '{button}' ? row : $(row).find('button[data-select-id="' + selectId + '"][data-ts-class="ts-button"]'));
 
 				$(button).click(function() {
 					self.parent().find('button[data-select-id="' + selectId + '"][data-ts-class="ts-button"]').removeClass('active');
 
 					self.children("option:selected").prop("selected", false);
 
-					$(this).toggleClass('active');
+					$(button).toggleClass('active');
 					
-					if ($(this).hasClass('active')) {
+					if ($(button).hasClass('active')) {
 						self.val($(this).attr('data-value'));
 					}
 				});
