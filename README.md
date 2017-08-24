@@ -1,1 +1,1 @@
-# yii2-toggle-select
+# DropDown to toggle buttons for Yii2
