@@ -47,7 +47,7 @@
 					$(button).toggleClass('active');
 					
 					if ($(button).hasClass('active')) {
-						self.val($(this).attr('data-value'));
+						self.val($(this).attr('data-value')).trigger('change');
 					}
 				});
 			});
