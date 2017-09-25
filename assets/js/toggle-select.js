@@ -40,13 +40,9 @@
 				button = (settings.buttonTemplate == '{button}' ? row : $(row).find('button[data-select-id="' + selectId + '"][data-ts-class="ts-button"]'));
 
 				$(button).click(function() {
-					self.parent().find('button[data-select-id="' + selectId + '"][data-ts-class="ts-button"]').removeClass('active');
-
-					self.children("option:selected").prop("selected", false);
-
-					$(button).toggleClass('active');
-					
-					if ($(button).hasClass('active')) {
+					if (!$(this).hasClass('active')) {
+						self.parent().find('button[data-select-id="' + selectId + '"][data-ts-class="ts-button"].active').removeClass('active');
+						$(this).addClass('active');
 						self.val($(this).attr('data-value')).trigger('change');
 					}
 				});
