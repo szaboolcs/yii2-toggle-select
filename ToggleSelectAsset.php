@@ -5,13 +5,12 @@ use yii\web\AssetBundle;
 
 class ToggleSelectAsset extends AssetBundle
 {
+	public $js = ['js/toggle-select.js'];
+	
 	public function init()
 	{
 		$this->sourcePath = __DIR__ . '/assets';
-		$this->js         = [
-			'js/toggle-select.js'
-		];
-
+		
 		parent::init();
 	}
 }
